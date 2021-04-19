@@ -1,6 +1,6 @@
 language: go
 go:
  - "1.15.7"
-build:
+script:
     - cd hello-world
     - go test
