@@ -2,9 +2,3 @@ language: go
 
 go:
  - "1.15.7"
-jobs:
-include:
-    - stage: test
-    script: cd hello-world/ && go test
-    # - stage: deploy
-    # script: sam build
