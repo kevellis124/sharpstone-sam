@@ -1,0 +1,13 @@
+We'll need different endpoints for different sets of data.
+
+/users can represent the authorization and user-data services
+/users/authorize
+/users/{userId}
+/users/getToken
+/users/checkToken
+
+/sports can be the hub for sports info
+
+/sports/{sport}/players can represent grabbing data on which players may be inactive (injury data)
+/sports/{sport}/betting can be the hub for grabbing line information
+/sports/{sport}/betting/{matchupId} can grab all line info for that specific matchup
