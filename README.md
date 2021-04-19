@@ -1,5 +1,7 @@
 # sharpstone-sam
+[![Build Status](https://travis-ci.com/kevellis124/sharpstone-sam.svg?branch=main)](https://travis-ci.com/kevellis124/sharpstone-sam)
 
+##
 This is a sample template for sharpstone-sam - Below is a brief explanation of what we have generated for you:
 
 ```bash
