@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'AWS CloudFormation template for creating a dynamodb table.'
+Parameters:
+    Environment:
+      Description: The subset of services composing an environment of the application
+      Type: String
+      AllowedPattern: '[a-zA-Z0-9]*'
+      MinLength: '1'
+      MaxLength: '200'
+Resources:
+  Users:
+    Type: 'AWS::DynamoDB::Table'
+    Properties:
+      KeySchema:
+        -
+          AttributeName: "userId"
+          KeyType: "HASH"
+      AttributeDefinitions:
+        -
+          AttributeName: "userId"
+          AttributeType: "N"
+Outputs:
+  TableName:
+    Value: !Ref Users
+  Environment:
+    Value: !Ref Environment
+        
