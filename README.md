@@ -1,4 +1,5 @@
 # sharpstone-sam
+![Unit Tests](https://github.com/kevellis124/sharpstone-sam/actions/workflows/status-checks.yml/badge.svg)
 
 ## The build process
 Since this is a lambda, in order to ensure tests pass, `cd` into the proper directory where the files live. Then run the tests
