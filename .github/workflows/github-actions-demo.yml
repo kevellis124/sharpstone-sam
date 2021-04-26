@@ -17,4 +17,5 @@ jobs:
       - name: Run unit tests
         run: |
           cd hello-world
+          go test
       - run: echo "🍏 This job's status is ${{ job.status }}."
