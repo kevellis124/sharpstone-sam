@@ -21,15 +21,10 @@ jobs:
   Integration-Tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Configure AWS credentials
-        id: creds
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: test
-          aws-secret-access-key: test
-          # aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
-          aws-region: us-east-1
       - uses: actions/checkout@v2
       - name: SAM Validate
         run: |
+          aws configure set aws_access_key_id 'test'
+          aws configure set aws_secret_access_key 'test'
+          aws configure set aws-region 'test'
           sam validate
