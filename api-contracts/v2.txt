@@ -1,0 +1,24 @@
+GET /sports/{sport}/betting/odds
+This endpoint will return a list of objects:
+contest: {
+  contestants: [
+    {
+      name: "Celtics",
+      moneyLine: "+475",
+      spread: "+10.5"
+    },
+    {
+      name: "Thunder",
+      moneyLine: "-475",
+      spread: "-10.5"
+    }
+  ],
+  overPoints: {
+    total: 210.5,
+    odds: "-110"
+  },
+  underPoints: {
+    total: 210.5,
+    odds: "-110"
+  }
+}
