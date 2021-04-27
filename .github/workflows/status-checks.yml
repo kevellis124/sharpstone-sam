@@ -18,3 +18,10 @@ jobs:
           cd hello-world
           go test
       - run: echo "🍏 This job's status is ${{ job.status }}."
+  Integration-Tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: SAM Validate
+        run: |
+          sam validate
