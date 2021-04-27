@@ -28,4 +28,4 @@ jobs:
           aws configure set aws_secret_access_key 'test'
           aws configure set aws-region 'test'
           sam build
-          sam local start-api
+          sam local start-api & 
