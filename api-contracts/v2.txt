@@ -1,6 +1,7 @@
 GET /sports/{sport}/betting/odds
 This endpoint will return a list of objects:
 contest: {
+  contestId: 1,
   contestants: [
     {
       name: "Celtics",
