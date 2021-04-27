@@ -1,0 +1,38 @@
+Date: 4/27/2021
+
+GET /sports/{sport}/betting/odds
+This endpoint will return a list of objects:
+contest: {
+  contestId: 1,
+  contestants: [
+    {
+      name: "Celtics",
+      moneyLine: "+475",
+      spread: "+10.5"
+    },
+    {
+      name: "Thunder",
+      moneyLine: "-475",
+      spread: "-10.5"
+    }
+  ],
+  overPoints: {
+    total: 210.5,
+    odds: "-110"
+  },
+  underPoints: {
+    total: 210.5,
+    odds: "-110"
+  }
+}
+
+So, for example the nba endpoint will look like this:
+
+GET /sports/NBA/betting/odds
+date: "",
+bookmaker: "BetMGM",
+contests: [
+  {contest},
+  {contest},
+  {contest}
+]
