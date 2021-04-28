@@ -9,4 +9,4 @@ Since this is a lambda, in order to ensure tests pass, `cd` into the proper dire
 `sam deploy --guided` to push to aws
 `sam build` to create local executable that is used to upload to s3 as well as run local
 `sam local start-api` to start the api
-`sam local invoke "HelloWorldFunction" -e events/event.json` if you are invoking a function with a specific event
+`sam local invoke "GetOdds" -e events/event.json` if you are invoking a function with a specific event

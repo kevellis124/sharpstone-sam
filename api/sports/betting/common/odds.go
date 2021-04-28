@@ -1,5 +1,6 @@
 package common
 
-func getTodaysOdds(sport string) (string, error) {
+// GetTodaysOdds retrieves odds
+func GetTodaysOdds(sport string) (string, error) {
 	return "test", nil
 }

@@ -1,10 +1,8 @@
 package main
 
 import (
+	"api/sports/betting/common"
 	"errors"
-	"fmt"
-	"io/ioutil"
-	"net/http"
 
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
@@ -22,26 +20,14 @@ var (
 )
 
 func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
-	resp, err := http.Get(DefaultHTTPGetAddress)
+	var odds, err = common.GetTodaysOdds("nba")
+
 	if err != nil {
 		return events.APIGatewayProxyResponse{}, err
-	}
-
-	if resp.StatusCode != 200 {
-		return events.APIGatewayProxyResponse{}, ErrNon200Response
-	}
-
-	ip, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		return events.APIGatewayProxyResponse{}, err
-	}
-
-	if len(ip) == 0 {
-		return events.APIGatewayProxyResponse{}, ErrNoIP
 	}
 
 	return events.APIGatewayProxyResponse{
-		Body:       fmt.Sprintf("Hey there! %v", string(ip)),
+		Body:       odds,
 		StatusCode: 200,
 	}, nil
 }
