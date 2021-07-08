@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  db:
+    image: localstack/localstack
+    ports:
+      - '8000:8000'
+      - '8080:8080'
+    container_name: dynamodb_localstack
+    environment:
+      SERVICES: dynamodb:8000,cloudformation
+      DATA_DIR: '/tmp/localstack/data'
+  api:
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    command: sam local start-api --host 0.0.0.0
+    build: .
+    volumes:
+      - .:/app
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "4556:4556"
+      - "3000:3000"
+    depends_on:
+      - db
